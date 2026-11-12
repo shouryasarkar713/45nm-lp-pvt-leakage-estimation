@@ -1,0 +1,144 @@
+PASS A1 dataset exists NMOS_ON
+PASS A2 NMOS_ON: 10,000 rows and exact columns
+PASS A3 NMOS_ON: no NaN / no duplicate rows
+PASS A4 NMOS_ON: VDD, T, W, Vd, Vs ranges
+PASS A5 NMOS_ON: gate/body voltages fixed by case
+PASS A6 NMOS_ON: process parameters within nominal +-10 %
+PASS A7 NMOS_ON: KCL |sum of 4 terminal currents| < 1e-12 A  -- max 9.75e-14
+PASS A8 NMOS_ON: uniform-draw sanity (means within 5 % of range centre)
+PASS A1 dataset exists NMOS_OFF
+PASS A2 NMOS_OFF: 10,000 rows and exact columns
+PASS A3 NMOS_OFF: no NaN / no duplicate rows
+PASS A4 NMOS_OFF: VDD, T, W, Vd, Vs ranges
+PASS A5 NMOS_OFF: gate/body voltages fixed by case
+PASS A6 NMOS_OFF: process parameters within nominal +-10 %
+PASS A7 NMOS_OFF: KCL |sum of 4 terminal currents| < 1e-12 A  -- max 8.10e-20
+PASS A8 NMOS_OFF: uniform-draw sanity (means within 5 % of range centre)
+PASS A1 dataset exists PMOS_ON
+PASS A2 PMOS_ON: 10,000 rows and exact columns
+PASS A3 PMOS_ON: no NaN / no duplicate rows
+PASS A4 PMOS_ON: VDD, T, W, Vd, Vs ranges
+PASS A5 PMOS_ON: gate/body voltages fixed by case
+PASS A6 PMOS_ON: process parameters within nominal +-10 %
+PASS A7 PMOS_ON: KCL |sum of 4 terminal currents| < 1e-12 A  -- max 7.87e-14
+PASS A8 PMOS_ON: uniform-draw sanity (means within 5 % of range centre)
+PASS A1 dataset exists PMOS_OFF
+PASS A2 PMOS_OFF: 10,000 rows and exact columns
+PASS A3 PMOS_OFF: no NaN / no duplicate rows
+PASS A4 PMOS_OFF: VDD, T, W, Vd, Vs ranges
+PASS A5 PMOS_OFF: gate/body voltages fixed by case
+PASS A6 PMOS_OFF: process parameters within nominal +-10 %
+PASS A7 PMOS_OFF: KCL |sum of 4 terminal currents| < 1e-12 A  -- max 9.95e-16
+PASS A8 PMOS_OFF: uniform-draw sanity (means within 5 % of range centre)
+PASS A9 data-check artifact kirchhoff_check.csv
+PASS A9 data-check artifact trend_ioff_vs_temperature.png
+PASS A9 data-check artifact trend_ioff_vs_vth0.png
+PASS A9 data-check artifact trend_ig_vs_toxe.png
+PASS A9 data-check artifact kirchhoff_histograms.png
+PASS B1 split 7000/1500/1500, disjoint, covers 10,000
+PASS B2 NMOS_ON: four required families + StructMLP compared on validation
+PASS B3 NMOS_ON: selected model = argmin validation median error
+PASS B4 NMOS_ON: chosen model file exists
+PASS B5a NMOS_ON: stored validation/test row hashes match the data files
+PASS B5 NMOS_ON: zero val/test rows in the training table (hash manifest)  -- 267000 training rows
+PASS B6 NMOS_ON: test evaluated after selection
+PASS B7 NMOS_ON: pred-vs-SPICE plot
+PASS B8 NMOS_ON: saved model loads and predicts
+PASS B2 NMOS_OFF: four required families + StructMLP compared on validation
+PASS B3 NMOS_OFF: selected model = argmin validation median error
+PASS B4 NMOS_OFF: chosen model file exists
+PASS B5a NMOS_OFF: stored validation/test row hashes match the data files
+PASS B5 NMOS_OFF: zero val/test rows in the training table (hash manifest)  -- 267000 training rows
+PASS B6 NMOS_OFF: test evaluated after selection
+PASS B7 NMOS_OFF: pred-vs-SPICE plot
+PASS B8 NMOS_OFF: saved model loads and predicts
+PASS B2 PMOS_ON: four required families + StructMLP compared on validation
+PASS B3 PMOS_ON: selected model = argmin validation median error
+PASS B4 PMOS_ON: chosen model file exists
+PASS B5a PMOS_ON: stored validation/test row hashes match the data files
+PASS B5 PMOS_ON: zero val/test rows in the training table (hash manifest)  -- 267000 training rows
+PASS B6 PMOS_ON: test evaluated after selection
+PASS B7 PMOS_ON: pred-vs-SPICE plot
+PASS B8 PMOS_ON: saved model loads and predicts
+PASS B2 PMOS_OFF: four required families + StructMLP compared on validation
+PASS B3 PMOS_OFF: selected model = argmin validation median error
+PASS B4 PMOS_OFF: chosen model file exists
+PASS B5a PMOS_OFF: stored validation/test row hashes match the data files
+PASS B5 PMOS_OFF: zero val/test rows in the training table (hash manifest)  -- 267000 training rows
+PASS B6 PMOS_OFF: test evaluated after selection
+PASS B7 PMOS_OFF: pred-vs-SPICE plot
+PASS B8 PMOS_OFF: saved model loads and predicts
+PASS B9 test summary has four cases
+PASS C1 3,600 gate reference records, all accepted
+PASS C2 18 gate/input cases x 200 corners
+PASS C3 200 official corners; gate records use them
+PASS C4 3,600 ML gate predictions; output + internal-node voltages recorded (SPICE and ML)
+PASS C5 gate table T: 18 rows
+PASS C6 gate table T independently recomputed from per-point CSV
+PASS C7 gate overall T mean accuracy recomputed
+PASS C5 gate table S: 18 rows
+PASS C6 gate table S independently recomputed from per-point CSV
+PASS C7 gate overall S mean accuracy recomputed
+PASS C8 gate parity plots
+PASS C9 gate SPICE reference file has no ML-derived column (acceptance independent of ML)
+PASS D1 truth table = 8-bit parity
+PASS D2 21 gates
+PASS D3 51,200 circuit reference records (256 x 200)
+PASS D4 51,200 hierarchical predictions
+PASS D5 all circuit SPICE references accepted by ML-independent criteria
+PASS D6 prediction function never references circuit-SPICE data
+PASS D7 hierarchical prediction re-computed from Part-B table only (3 corners x 256 vectors)
+PASS D8 circuit table & parity plot
+PASS D9 circuit overall metrics recomputed
+PASS F1 solver-warning audit covers every gate reference with solver_failed_msg = 1  -- 27 records
+PASS F2 every warning-bearing reference is classified valid (no invalid / questionable)  -- {'strict_with_warning': 23, 'relaxed_documented': 4}
+PASS F3 audited re-solves agree within 1 % and KCL < 1e-3
+PASS F4 T = static power / VDD verified from raw source currents (gate and circuit)
+PASS F5 load-corrected S composition verified on SPICE data only (mean error < 0.1 %)
+PASS F6 extended test statistics (signed-scale R2, log R2, KCL) present for all cases
+PASS F7 quantity labelled in every result table
+PASS F8 rendered report verified against result files (verify_report.py)
+PASS F9 report PDF and DOCX present
+PASS G1 solver-warning counts consistent (audit rows = flagged records = summary total)
+PASS G2 classification totals recomputed from the audit CSV match the summary
+PASS G3 valid alternative solutions per record: min >= 10, max <= 15 (recomputed from CSV)  -- 10-15 median 13
+PASS G4 repeatability detail: two comparisons per warning record, all pass the stated tolerance
+PASS G4b repeatability compares the full set of quantities (>= 50 per run-vs-run comparison)
+PASS G5 DC-branch probe: classes recomputed from detail match the summary and sum to all attempts
+PASS G5b every solution classified valid has finite output, correct logic, positive power, KCL < 1e-3 and repeatable
+PASS G5c probe-level counts: n_valid > 0 + no_valid_solution_found = number of probes  -- 48 probes, 3 without valid solution
+PASS G6 per-vector T: 256 unique vectors 0..255, 200 PVT each, correct bits/parity/Hamming weight
+PASS G6b per-vector T: no missing/non-finite required metrics
+PASS G7 per-vector T: recomputed from the 51,200 records, and its mean reproduces the global accuracy
+PASS G6 per-vector S: 256 unique vectors 0..255, 200 PVT each, correct bits/parity/Hamming weight
+PASS G6b per-vector S: no missing/non-finite required metrics
+PASS G7 per-vector S: recomputed from the 51,200 records, and its mean reproduces the global accuracy
+PASS G6 per-vector S_loadcorrected: 256 unique vectors 0..255, 200 PVT each, correct bits/parity/Hamming weight
+PASS G6b per-vector S_loadcorrected: no missing/non-finite required metrics
+PASS G7 per-vector S_loadcorrected: recomputed from the 51,200 records, and its mean reproduces the global accuracy
+PASS F10 no development-history or agent wording in source, README and documentation  -- []
+PASS F11 no local machine paths in documentation and environment record
+PASS E1 netlist example_transistor_NMOS_ON.cir (+ mandated .options)
+PASS E1 netlist example_transistor_NMOS_OFF.cir (+ mandated .options)
+PASS E1 netlist example_transistor_PMOS_ON.cir (+ mandated .options)
+PASS E1 netlist example_transistor_PMOS_OFF.cir (+ mandated .options)
+PASS E1 netlist example_gate_INV.cir (+ mandated .options)
+PASS E1 netlist example_gate_NAND2.cir (+ mandated .options)
+PASS E1 netlist example_gate_NOR2.cir (+ mandated .options)
+PASS E1 netlist example_gate_AND2.cir (+ mandated .options)
+PASS E1 netlist example_gate_OR2.cir (+ mandated .options)
+PASS E1 netlist example_parity_checker.cir (+ mandated .options)
+PASS E1 netlist 45nm_LP.pm (+ mandated .options)
+PASS E2 NMOS_ON netlist has one source per terminal
+PASS E2 NMOS_OFF netlist has one source per terminal
+PASS E2 PMOS_ON netlist has one source per terminal
+PASS E2 PMOS_OFF netlist has one source per terminal
+PASS E6 example AND2 netlist (altermod) reproduces the generator's inline model-card result in ngspice
+PASS E7 supply reconstruction validated with SPICE device currents (median rel. error < 1e-4)
+PASS E3 model card present and hash recorded
+PASS E4b internal working documents (instructor-question draft, requirements matrix) are outside the submission files  -- []
+PASS E4 requirements.txt and README present
+PASS E5 package manifest: every entry exists and its sha256 matches  -- 0 bad: []
+
+141/141 checks passed
+ALL MANDATORY CHECKS PASSED

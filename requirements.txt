@@ -1,0 +1,11 @@
+# Tested environment (see out/environment.json for the exact values recorded at run time)
+# Python 3.14.x ; ngspice-47 (external executable, not a pip package)
+numpy==2.5.4
+pandas==3.1.1
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib>=1.5
+matplotlib>=3.10
+torch==2.15.0     # CPU build; used ONLY for training the structured MLP (saved models run with numpy only)
+lightgbm>=4.6     # optional, not used by the final pipeline
+python-docx>=1.2  # report generation

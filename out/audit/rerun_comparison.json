@@ -1,0 +1,211 @@
+{
+ "base_NMOS_ON": {
+  "inputs_identical": true,
+  "currents_rel_diff": {
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 9.998916065703484e-10,
+   "n": 37475
+  },
+  "max_abs_diff_A": 1.0000000502143058e-13
+ },
+ "base_NMOS_OFF": {
+  "inputs_identical": true,
+  "currents_rel_diff": {
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 9.99975937398977e-10,
+   "n": 25997
+  },
+  "max_abs_diff_A": 9.999999682655225e-21
+ },
+ "base_PMOS_ON": {
+  "inputs_identical": true,
+  "currents_rel_diff": {
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 9.098884866483125e-10,
+   "n": 37465
+  },
+  "max_abs_diff_A": 1.000000321264849e-14
+ },
+ "base_PMOS_OFF": {
+  "inputs_identical": true,
+  "currents_rel_diff": {
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 8.644418698434961e-10,
+   "n": 25919
+  },
+  "max_abs_diff_A": 9.999999682655225e-22
+ },
+ "corners_identical": true,
+ "gate_spice": {
+  "rows_equal_keys": true,
+  "i_vdd_rel_diff": {
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0,
+   "n": 3600
+  },
+  "i_tot_rel_diff": {
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0,
+   "n": 3600
+  },
+  "all_ok": true,
+  "attempts_new": {
+   "0": 3536,
+   "1": 58,
+   "2": 6
+  },
+  "attempts_stored": {
+   "0": 3536,
+   "1": 58,
+   "2": 6
+  },
+  "solver_msg_new": 27,
+  "solver_msg_stored": 27
+ },
+ "circuit_spice": {
+  "n_new": 51200,
+  "all_ok": true,
+  "i_tot_rel_diff": {
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0,
+   "n": 51200
+  },
+  "i_vdd_rel_diff": {
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0,
+   "n": 51200
+  },
+  "attempts_new": {
+   "0": 50433,
+   "1": 760,
+   "2": 7
+  },
+  "attempts_stored": {
+   "0": 50433,
+   "1": 760,
+   "2": 7
+  }
+ },
+ "test_summary": {
+  "rerun": [
+   {
+    "case": "NMOS_ON",
+    "model": "StructMLP",
+    "med_err_pct": 1.061,
+    "p95_err_pct": 8.619
+   },
+   {
+    "case": "NMOS_OFF",
+    "model": "StructMLP",
+    "med_err_pct": 0.78,
+    "p95_err_pct": 4.779
+   },
+   {
+    "case": "PMOS_ON",
+    "model": "StructMLP",
+    "med_err_pct": 0.735,
+    "p95_err_pct": 3.464
+   },
+   {
+    "case": "PMOS_OFF",
+    "model": "StructMLP",
+    "med_err_pct": 0.664,
+    "p95_err_pct": 9.532
+   }
+  ],
+  "stored": [
+   {
+    "case": "NMOS_ON",
+    "model": "StructMLP",
+    "med_err_pct": 1.077,
+    "p95_err_pct": 8.603
+   },
+   {
+    "case": "NMOS_OFF",
+    "model": "StructMLP",
+    "med_err_pct": 0.776,
+    "p95_err_pct": 4.746
+   },
+   {
+    "case": "PMOS_ON",
+    "model": "StructMLP",
+    "med_err_pct": 0.742,
+    "p95_err_pct": 3.509
+   },
+   {
+    "case": "PMOS_OFF",
+    "model": "StructMLP",
+    "med_err_pct": 0.671,
+    "p95_err_pct": 9.605
+   }
+  ]
+ },
+ "gate_metrics": {
+  "rerun": {
+   "T": {
+    "n": 3600,
+    "spice_median_A": 2.18013044868516e-11,
+    "ml_median_A": 2.180633474873809e-11,
+    "bias_pct": -0.014327175237634281,
+    "median_err_pct": 0.42099287902190496,
+    "p95_err_pct": 1.6319629960344715,
+    "mean_err_pct": 0.5801945846720202,
+    "mean_accuracy_pct": 99.41980541532797
+   },
+   "S": {
+    "n": 3600,
+    "spice_median_A": 1.5080725395238102e-11,
+    "ml_median_A": 1.514955406740017e-11,
+    "bias_pct": -0.016580702585027016,
+    "median_err_pct": 0.43373651476787334,
+    "p95_err_pct": 2.2407807738549512,
+    "mean_err_pct": 0.6877908784749928,
+    "mean_accuracy_pct": 99.312209121525
+   }
+  },
+  "stored": {
+   "T": {
+    "n": 3600,
+    "spice_median_A": 2.18013044868516e-11,
+    "ml_median_A": 2.185071181419151e-11,
+    "bias_pct": 0.0343062572079344,
+    "median_err_pct": 0.4379481788186073,
+    "p95_err_pct": 1.8393300734227223,
+    "mean_err_pct": 0.631801483822114,
+    "mean_accuracy_pct": 99.36819851617788
+   },
+   "S": {
+    "n": 3600,
+    "spice_median_A": 1.5080725395238102e-11,
+    "ml_median_A": 1.5118881635199468e-11,
+    "bias_pct": 0.008697349202894639,
+    "median_err_pct": 0.41781993879140955,
+    "p95_err_pct": 2.330826247418436,
+    "mean_err_pct": 0.6864212442803939,
+    "mean_accuracy_pct": 99.31357875571962
+   }
+  }
+ },
+ "circuit_metrics": {
+  "T": {
+   "rerun": 99.53369898437613,
+   "stored": 99.47571713039875
+  },
+  "S": {
+   "rerun": 80.61597214313659,
+   "stored": 80.63181534517794
+  },
+  "S_load_corrected": {
+   "rerun": 99.54588131339035,
+   "stored": 99.50245204800034
+  }
+ }
+}
