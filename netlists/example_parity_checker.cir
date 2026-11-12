@@ -1,0 +1,143 @@
+* 8-bit parity checker (7 x XOR2; XOR2 = AND2(NAND2(a,b), OR2(a,b))) inputs 10110010  VDD=0.9429 T=-11.83
+.include 45nm_LP.pm
+.options gmin=1e-18 abstol=1e-18 reltol=1e-6 vntol=1e-9
+.param Lmin=4.5e-08 Wn=9e-08 Wp=1.8e-07
+MN1_MpA n1 p0 vdd vdd pmos W={Wp} L={Lmin}
+MN1_MpB n1 p1 vdd vdd pmos W={Wp} L={Lmin}
+MN1_MnA n1 p0 N1_x gss nmos W={Wn} L={Lmin}
+MN1_MnB N1_x p1 gss gss nmos W={Wn} L={Lmin}
+MO11_MpA O11_y p0 vdd vdd pmos W={Wp} L={Lmin}
+MO11_MpB O1_m p1 O11_y vdd pmos W={Wp} L={Lmin}
+MO11_MnA O1_m p0 gss gss nmos W={Wn} L={Lmin}
+MO11_MnB O1_m p1 gss gss nmos W={Wn} L={Lmin}
+MO12_Mp o1 O1_m vdd vdd pmos W={Wp} L={Lmin}
+MO12_Mn o1 O1_m gss gss nmos W={Wn} L={Lmin}
+MA11_MpA A1_m n1 vdd vdd pmos W={Wp} L={Lmin}
+MA11_MpB A1_m o1 vdd vdd pmos W={Wp} L={Lmin}
+MA11_MnA A1_m n1 A11_x gss nmos W={Wn} L={Lmin}
+MA11_MnB A11_x o1 gss gss nmos W={Wn} L={Lmin}
+MA12_Mp x1 A1_m vdd vdd pmos W={Wp} L={Lmin}
+MA12_Mn x1 A1_m gss gss nmos W={Wn} L={Lmin}
+MN2_MpA n2 p2 vdd vdd pmos W={Wp} L={Lmin}
+MN2_MpB n2 p3 vdd vdd pmos W={Wp} L={Lmin}
+MN2_MnA n2 p2 N2_x gss nmos W={Wn} L={Lmin}
+MN2_MnB N2_x p3 gss gss nmos W={Wn} L={Lmin}
+MO21_MpA O21_y p2 vdd vdd pmos W={Wp} L={Lmin}
+MO21_MpB O2_m p3 O21_y vdd pmos W={Wp} L={Lmin}
+MO21_MnA O2_m p2 gss gss nmos W={Wn} L={Lmin}
+MO21_MnB O2_m p3 gss gss nmos W={Wn} L={Lmin}
+MO22_Mp o2 O2_m vdd vdd pmos W={Wp} L={Lmin}
+MO22_Mn o2 O2_m gss gss nmos W={Wn} L={Lmin}
+MA21_MpA A2_m n2 vdd vdd pmos W={Wp} L={Lmin}
+MA21_MpB A2_m o2 vdd vdd pmos W={Wp} L={Lmin}
+MA21_MnA A2_m n2 A21_x gss nmos W={Wn} L={Lmin}
+MA21_MnB A21_x o2 gss gss nmos W={Wn} L={Lmin}
+MA22_Mp x2 A2_m vdd vdd pmos W={Wp} L={Lmin}
+MA22_Mn x2 A2_m gss gss nmos W={Wn} L={Lmin}
+MN3_MpA n3 p4 vdd vdd pmos W={Wp} L={Lmin}
+MN3_MpB n3 p5 vdd vdd pmos W={Wp} L={Lmin}
+MN3_MnA n3 p4 N3_x gss nmos W={Wn} L={Lmin}
+MN3_MnB N3_x p5 gss gss nmos W={Wn} L={Lmin}
+MO31_MpA O31_y p4 vdd vdd pmos W={Wp} L={Lmin}
+MO31_MpB O3_m p5 O31_y vdd pmos W={Wp} L={Lmin}
+MO31_MnA O3_m p4 gss gss nmos W={Wn} L={Lmin}
+MO31_MnB O3_m p5 gss gss nmos W={Wn} L={Lmin}
+MO32_Mp o3 O3_m vdd vdd pmos W={Wp} L={Lmin}
+MO32_Mn o3 O3_m gss gss nmos W={Wn} L={Lmin}
+MA31_MpA A3_m n3 vdd vdd pmos W={Wp} L={Lmin}
+MA31_MpB A3_m o3 vdd vdd pmos W={Wp} L={Lmin}
+MA31_MnA A3_m n3 A31_x gss nmos W={Wn} L={Lmin}
+MA31_MnB A31_x o3 gss gss nmos W={Wn} L={Lmin}
+MA32_Mp x3 A3_m vdd vdd pmos W={Wp} L={Lmin}
+MA32_Mn x3 A3_m gss gss nmos W={Wn} L={Lmin}
+MN4_MpA n4 p6 vdd vdd pmos W={Wp} L={Lmin}
+MN4_MpB n4 p7 vdd vdd pmos W={Wp} L={Lmin}
+MN4_MnA n4 p6 N4_x gss nmos W={Wn} L={Lmin}
+MN4_MnB N4_x p7 gss gss nmos W={Wn} L={Lmin}
+MO41_MpA O41_y p6 vdd vdd pmos W={Wp} L={Lmin}
+MO41_MpB O4_m p7 O41_y vdd pmos W={Wp} L={Lmin}
+MO41_MnA O4_m p6 gss gss nmos W={Wn} L={Lmin}
+MO41_MnB O4_m p7 gss gss nmos W={Wn} L={Lmin}
+MO42_Mp o4 O4_m vdd vdd pmos W={Wp} L={Lmin}
+MO42_Mn o4 O4_m gss gss nmos W={Wn} L={Lmin}
+MA41_MpA A4_m n4 vdd vdd pmos W={Wp} L={Lmin}
+MA41_MpB A4_m o4 vdd vdd pmos W={Wp} L={Lmin}
+MA41_MnA A4_m n4 A41_x gss nmos W={Wn} L={Lmin}
+MA41_MnB A41_x o4 gss gss nmos W={Wn} L={Lmin}
+MA42_Mp x4 A4_m vdd vdd pmos W={Wp} L={Lmin}
+MA42_Mn x4 A4_m gss gss nmos W={Wn} L={Lmin}
+MN5_MpA n5 x1 vdd vdd pmos W={Wp} L={Lmin}
+MN5_MpB n5 x2 vdd vdd pmos W={Wp} L={Lmin}
+MN5_MnA n5 x1 N5_x gss nmos W={Wn} L={Lmin}
+MN5_MnB N5_x x2 gss gss nmos W={Wn} L={Lmin}
+MO51_MpA O51_y x1 vdd vdd pmos W={Wp} L={Lmin}
+MO51_MpB O5_m x2 O51_y vdd pmos W={Wp} L={Lmin}
+MO51_MnA O5_m x1 gss gss nmos W={Wn} L={Lmin}
+MO51_MnB O5_m x2 gss gss nmos W={Wn} L={Lmin}
+MO52_Mp o5 O5_m vdd vdd pmos W={Wp} L={Lmin}
+MO52_Mn o5 O5_m gss gss nmos W={Wn} L={Lmin}
+MA51_MpA A5_m n5 vdd vdd pmos W={Wp} L={Lmin}
+MA51_MpB A5_m o5 vdd vdd pmos W={Wp} L={Lmin}
+MA51_MnA A5_m n5 A51_x gss nmos W={Wn} L={Lmin}
+MA51_MnB A51_x o5 gss gss nmos W={Wn} L={Lmin}
+MA52_Mp x5 A5_m vdd vdd pmos W={Wp} L={Lmin}
+MA52_Mn x5 A5_m gss gss nmos W={Wn} L={Lmin}
+MN6_MpA n6 x3 vdd vdd pmos W={Wp} L={Lmin}
+MN6_MpB n6 x4 vdd vdd pmos W={Wp} L={Lmin}
+MN6_MnA n6 x3 N6_x gss nmos W={Wn} L={Lmin}
+MN6_MnB N6_x x4 gss gss nmos W={Wn} L={Lmin}
+MO61_MpA O61_y x3 vdd vdd pmos W={Wp} L={Lmin}
+MO61_MpB O6_m x4 O61_y vdd pmos W={Wp} L={Lmin}
+MO61_MnA O6_m x3 gss gss nmos W={Wn} L={Lmin}
+MO61_MnB O6_m x4 gss gss nmos W={Wn} L={Lmin}
+MO62_Mp o6 O6_m vdd vdd pmos W={Wp} L={Lmin}
+MO62_Mn o6 O6_m gss gss nmos W={Wn} L={Lmin}
+MA61_MpA A6_m n6 vdd vdd pmos W={Wp} L={Lmin}
+MA61_MpB A6_m o6 vdd vdd pmos W={Wp} L={Lmin}
+MA61_MnA A6_m n6 A61_x gss nmos W={Wn} L={Lmin}
+MA61_MnB A61_x o6 gss gss nmos W={Wn} L={Lmin}
+MA62_Mp x6 A6_m vdd vdd pmos W={Wp} L={Lmin}
+MA62_Mn x6 A6_m gss gss nmos W={Wn} L={Lmin}
+MN7_MpA n7 x5 vdd vdd pmos W={Wp} L={Lmin}
+MN7_MpB n7 x6 vdd vdd pmos W={Wp} L={Lmin}
+MN7_MnA n7 x5 N7_x gss nmos W={Wn} L={Lmin}
+MN7_MnB N7_x x6 gss gss nmos W={Wn} L={Lmin}
+MO71_MpA O71_y x5 vdd vdd pmos W={Wp} L={Lmin}
+MO71_MpB O7_m x6 O71_y vdd pmos W={Wp} L={Lmin}
+MO71_MnA O7_m x5 gss gss nmos W={Wn} L={Lmin}
+MO71_MnB O7_m x6 gss gss nmos W={Wn} L={Lmin}
+MO72_Mp o7 O7_m vdd vdd pmos W={Wp} L={Lmin}
+MO72_Mn o7 O7_m gss gss nmos W={Wn} L={Lmin}
+MA71_MpA A7_m n7 vdd vdd pmos W={Wp} L={Lmin}
+MA71_MpB A7_m o7 vdd vdd pmos W={Wp} L={Lmin}
+MA71_MnA A7_m n7 A71_x gss nmos W={Wn} L={Lmin}
+MA71_MnB A71_x o7 gss gss nmos W={Wn} L={Lmin}
+MA72_Mp x7 A7_m vdd vdd pmos W={Wp} L={Lmin}
+MA72_Mn x7 A7_m gss gss nmos W={Wn} L={Lmin}
+Vp0 p0 0 0.9428864838
+Vp1 p1 0 0
+Vp2 p2 0 0.9428864838
+Vp3 p3 0 0.9428864838
+Vp4 p4 0 0
+Vp5 p5 0 0
+Vp6 p6 0 0.9428864838
+Vp7 p7 0 0
+Vdd vdd 0 0.9428864838
+Vss gss 0 0
+.control
+set numdgt=15
+altermod @nmos[vth0] = 0.6717906723
+altermod @nmos[toxe] = 1.627080757e-09
+altermod @nmos[ndep] = 3.272740243e+18
+altermod @nmos[u0] = 0.04886280818
+altermod @nmos[xj] = 1.437214054e-08
+altermod @pmos[vth0] = -0.544842697
+altermod @pmos[toxe] = 1.751622914e-09
+altermod @pmos[ndep] = 2.360561949e+18
+altermod @pmos[u0] = 0.01942385679
+altermod @pmos[xj] = 1.411091772e-08
+set temp = -11.8311
+op
+print i(vdd) i(vss) i(vp0) i(vp1) i(vp2) i(vp3) i(vp4) i(vp5) i(vp6) i(vp7) v(x7)
+.endc
+.end

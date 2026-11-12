@@ -1,0 +1,12 @@
+{
+ "gate_T_equals_static_power_over_VDD_max_rel_diff": 4.440892098500626e-16,
+ "gate_source_current_balance_max_rel": 0.0019128417610151985,
+ "gate_S_over_T_median": 0.9191473097747391,
+ "gate_cases_with_S_ne_T_gt_1pct": 0.6047222222222223,
+ "circuit_T_equals_static_power_over_VDD_max_rel_diff": 4.440892098500626e-16,
+ "circuit_source_balance_max_rel": 0.0024687446737443534,
+ "circuit_S_over_T_median": 0.9432199123773826,
+ "load_correction_SPICE_only_mean_abs_err_pct": 0.011353874226186916,
+ "plain_gate_sum_S_mean_abs_err_pct": 19.33308908590694,
+ "T_gate_sum_mean_abs_err_pct": 0.010078749206811085
+}

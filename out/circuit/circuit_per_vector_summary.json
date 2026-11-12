@@ -1,0 +1,70 @@
+{
+ "T": {
+  "rows": 256,
+  "global_mean_accuracy_from_vectors": 99.47571713039875,
+  "global_mean_accuracy_reported": 99.47571713039875,
+  "worst_vector": 186,
+  "best_vector": 48
+ },
+ "S": {
+  "rows": 256,
+  "global_mean_accuracy_from_vectors": 80.63181534517793,
+  "global_mean_accuracy_reported": 80.63181534517794,
+  "worst_vector": 174,
+  "best_vector": 0
+ },
+ "S_loadcorrected": {
+  "rows": 256,
+  "global_mean_accuracy_from_vectors": 99.50245204800034,
+  "global_mean_accuracy_reported": 99.50245204800034,
+  "worst_vector": 187,
+  "best_vector": 0
+ },
+ "association_analysis_T": {
+  "spearman_hamming_vs_median_error": [
+   0.5991482130580189,
+   2.4626092176978557e-26
+  ],
+  "spearman_hamming_vs_p95_error": [
+   0.7109350336418876,
+   1.029678359069843e-40
+  ],
+  "mannwhitney_parity_median_error_p": 0.183706974131845,
+  "median_of_median_error_by_parity": {
+   "0": 0.4022077988407391,
+   "1": 0.40577619112702457
+  },
+  "median_error_range_pct": [
+   0.3152481534434027,
+   0.48971474694040706
+  ],
+  "p95_error_range_pct": [
+   1.147102723803335,
+   1.4545361736531015
+  ],
+  "top10_worst_median_error_hamming": [
+   5,
+   6,
+   3,
+   6,
+   6,
+   6,
+   5,
+   5,
+   5,
+   5
+  ],
+  "hamming_weight_counts_all": {
+   "0": 1,
+   "1": 8,
+   "2": 28,
+   "3": 56,
+   "4": 70,
+   "5": 56,
+   "6": 28,
+   "7": 8,
+   "8": 1
+  },
+  "spread_of_vector_median_error_over_mean": 0.07768172550306972
+ }
+}
