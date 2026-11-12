@@ -1,0 +1,26 @@
+* INV  inputs (1,)   corner VDD=0.9429 T=-11.83
+.include 45nm_LP.pm
+.options gmin=1e-18 abstol=1e-18 reltol=1e-6 vntol=1e-9
+.param Lmin=4.5e-08 Wn=9e-08 Wp=1.8e-07
+MG_Mp out a vdd vdd pmos W={Wp} L={Lmin}
+MG_Mn out a gss gss nmos W={Wn} L={Lmin}
+Va a 0 0.9428864838
+Vdd vdd 0 0.9428864838
+Vss gss 0 0
+.control
+set numdgt=15
+altermod @nmos[vth0] = 0.6717906723
+altermod @nmos[toxe] = 1.627080757e-09
+altermod @nmos[ndep] = 3.272740243e+18
+altermod @nmos[u0] = 0.04886280818
+altermod @nmos[xj] = 1.437214054e-08
+altermod @pmos[vth0] = -0.544842697
+altermod @pmos[toxe] = 1.751622914e-09
+altermod @pmos[ndep] = 2.360561949e+18
+altermod @pmos[u0] = 0.01942385679
+altermod @pmos[xj] = 1.411091772e-08
+set temp = -11.8311
+op
+print i(vdd) i(vss) i(va) v(out)
+.endc
+.end
