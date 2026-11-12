@@ -1,0 +1,21 @@
+* NMOS_ON: single NMOS (every terminal on its own voltage source)
+.include 45nm_LP.pm
+.options gmin=1e-18 abstol=1e-18 reltol=1e-6 vntol=1e-9
+.param Lmin=4.5e-08
+M1 d g s b nmos W=2.425580e-07 L={Lmin}
+Vd d 0 0.8452274994
+Vg g 0 1.088706501
+Vs s 0 0.9356332136
+Vb b 0 0
+.control
+set numdgt=15
+altermod @nmos[vth0] = 0.65060088
+altermod @nmos[toxe] = 1.971468337e-09
+altermod @nmos[ndep] = 3.228527528e+18
+altermod @nmos[u0] = 0.0460605133
+altermod @nmos[xj] = 1.479349711e-08
+set temp = 100.132
+op
+print i(vd) i(vg) i(vs) i(vb)
+.endc
+.end
